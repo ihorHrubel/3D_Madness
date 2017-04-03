@@ -28,6 +28,7 @@ namespace WebApplication2.Models
     public class DModel
     {
         public int Id { get; set; }
+        public string Url { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Weight { get; set; }
@@ -41,7 +42,7 @@ namespace WebApplication2.Models
     {
         public int Id { get; set; }
 
-        public int UserId { get; set; }
+        public int ApplicationUserId { get; set; }
 
         public int DModelId { get; set; }
 

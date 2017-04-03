@@ -1,4 +1,6 @@
-﻿@{
+﻿@using WebApplication2.Models
+@model IEnumerable<DModel>
+@{
     ViewBag.Title = "Home Page";
 }
 <div id="header-wrapper">
@@ -30,51 +32,24 @@
 
             <div id="feature-content">
                 <section>
-                    <h2>Gravida nibh quis urna</h2>
+                    <h2>Новинки</h2>
                 </section>
                 <div class="row">
                     <div class="12u">
                         <div class="row">
-                            <div class="3u">
-                                <section>
-                                    <div>
-                                        <div class="image-style1"><a href="#"><img src="~/Images/pics06.jpg" alt=""></a></div>
-                                        <div><a href="#"><img src="~/Images/img02.png" width="262" height="30" alt=""></a></div>
-                                    </div>
-                                    <p>Pellentesque viverra enim.Tristique ante ut risus. Quisque dictum. Integer nisl risus, sagittis convallis, rutrum id, elementum.</p>
-                                    <p class="button"><a href="#">Read Full Details</a></p>
-                                </section>
-                            </div>
-                            <div class="3u">
-                                <section>
-                                    <div>
-                                        <div class="image-style1"><a href="#"><img src="~/Images/pics07.jpg" alt=""></a></div>
-                                        <div><a href="#"><img src="~/Images/img02.png" width="262" height="30" alt=""></a></div>
-                                    </div>
-                                    <p>Pellentesque viverra enim.Tristique ante ut risus. Quisque dictum. Integer nisl risus, sagittis convallis, rutrum id, elementum.</p>
-                                    <p class="button"><a href="#">Read Full Details</a></p>
-                                </section>
-                            </div>
-                            <div class="3u">
-                                <section>
-                                    <div>
-                                        <div class="image-style1"><a href="#"><img src="~/Images/pics08.jpg" alt=""></a></div>
-                                        <div><a href="#"><img src="~/Images/img02.png" width="262" height="30" alt=""></a></div>
-                                    </div>
-                                    <p>Pellentesque viverra enim.Tristique ante ut risus. Quisque dictum. Integer nisl risus, sagittis convallis, rutrum id, elementum.</p>
-                                    <p class="button"><a href="#">Read Full Details</a></p>
-                                </section>
-                            </div>
-                            <div class="3u">
-                                <section>
-                                    <div>
-                                        <div class="image-style1"><a href="#"><img src="~/Images/pics09.jpg" alt=""></a></div>
-                                        <div><a href="#"><img src="~/Images/img02.png" width="262" height="30" alt=""></a></div>
-                                    </div>
-                                    <p>Pellentesque viverra enim.Tristique ante ut risus. Quisque dictum. Integer nisl risus, sagittis convallis, rutrum id, elementum.</p>
-                                    <p class="button"><a href="#">Read Full Details</a></p>
-                                </section>
-                            </div>
+                            @foreach (var m in Model)
+                            {
+                                <div class="3u">
+                                    <section style="text-align:center">
+                                        <div>
+                                            <div class="image-style1"><a href="#"><img src=@m.Url alt=""></a></div>
+                                            <div><a href="#"><img src="~/Images/img02.png" width="262" height="30" alt=""></a></div>
+                                        </div>
+                                        <p style="margin-top:-5px; font-size:20px; position:relative">@m.Name. @m.Style. @m.Color. @m.Description.</p>
+                                        <p class="button"><a href="#">Детальніше</a></p>
+                                    </section>
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>
@@ -84,37 +59,38 @@
             <div class="row">
                 <div class="12u">
                     <div class="row">
-                        <div id="splash"> <span>In posuere eleifend</span> odio quisque semper augue maecenas ligula congue rutrum. Pellentesque vulputaterisus semper. </div>
+                        <div id="splash"> <span>CGWorkr : </span> Кастомні 3D послуги </div>
                     </div>
                 </div>
             </div>
+
             <div class="row">
                 <div class="12u" id="gallery">
                     <div class="row">
                         <div class="4u">
                             <section>
-                                <div>
-                                    <div class="image-style1"><a href="#"><img src="~/Images/pics03.jpg" alt=""></a></div>
+                                <div style="text-align:center">
+                                    <div class="image-style1"><a href="#"><img src="~/Images/modeling.jpg" alt=""></a></div>
                                     <div><a href="#"><img src="~/Images/img02.png" width="262" height="30" alt=""></a></div>
-                                    <p>Pellentesque viverra enim.Tristique ante ut risus. Quisque dictum. Integer nisl risus, sagittis convallis, rutrum id, elementum.</p>
+                                    <p>Кастомне 3D моделювання</p>
                                 </div>
                             </section>
                         </div>
                         <div class="4u">
                             <section>
-                                <div>
-                                    <div class="image-style1"><a href="#"><img src="~/Images/pics04.jpg" alt=""></a></div>
+                                <div style="text-align:center">
+                                    <div class="image-style1"><a href="#"><img src="~/Images/visualization.jpg" alt=""></a></div>
                                     <div><a href="#"><img src="~/Images/img02.png" width="262" height="30" alt=""></a></div>
-                                    <p>Pellentesque viverra enim.Tristique ante ut risus. Quisque dictum. Integer nisl risus, sagittis convallis, rutrum id, elementum.</p>
+                                    <p>Кастомний 3D рендерінг</p>
                                 </div>
                             </section>
                         </div>
                         <div class="4u">
                             <section>
-                                <div>
-                                    <div class="image-style1"><a href="#"><img src="~/Images/pics05.jpg" alt=""></a></div>
+                                <div style="text-align:center">
+                                    <div class="image-style1"><a href="#"><img src="~/Images/animation.jpg" alt=""></a></div>
                                     <div><a href="#"><img src="~/Images/img02.png" width="262" height="30" alt=""></a></div>
-                                    <p>Pellentesque viverra enim.Tristique ante ut risus. Quisque dictum. Integer nisl risus, sagittis convallis, rutrum id, elementum.</p>
+                                    <p>Кастомна 3D анімація</p>
                                 </div>
                             </section>
                         </div>

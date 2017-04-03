@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication2.Models;
 
 namespace WebApplication2.Controllers
 {
@@ -10,7 +11,8 @@ namespace WebApplication2.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            ApplicationDbContext db = new ApplicationDbContext();
+            return View(db.DModels.Take(4));
         }
 
         public ActionResult About()
