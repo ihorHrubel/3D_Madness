@@ -1,0 +1,29 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title>3D</title>
+    <meta charset="utf-8">
+
+    <link href="@Url.Content("~/Content/style.css")" rel="stylesheet" type="text/css" />
+    @RenderSection("Styles", false)
+
+    <link href="@Url.Content("~/Content/style-desktop.css")" rel="stylesheet" type="text/css" />
+    @RenderSection("Styles", false)
+
+    <script src="~/Scripts/init.js"></script>
+    <script src="~/Scripts/jquery.js"></script>
+    @Scripts.Render("~/Scripts/jquery.js")
+    @Scripts.Render("~/Scripts/init.js")
+
+</head>
+
+<body>
+
+    
+
+    @RenderBody();
+
+    
+    @RenderSection("scripts", required: false)
+</body>
+</html>

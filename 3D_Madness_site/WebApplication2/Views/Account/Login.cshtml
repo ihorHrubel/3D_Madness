@@ -1,0 +1,177 @@
+﻿@using WebApplication2.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Авторизація на сайті";
+}
+
+<style>
+#login-form {
+        margin: 150px auto;
+        width: 300px;
+        position:absolute;
+        margin-top:50px;
+        left:38%
+    }
+#login-main{
+        background: url(../../Images/bg.png) repeat;
+        color: #999;
+        font: 100%/1.5em sans-serif;
+        height:510px;
+        margin-top:0px;
+       
+    }
+#login-form h2 {
+	    background-color: #282830;
+	    border-radius: 5px 5px 0 0;
+	    color: #fff;
+	    font-size: 14px;
+	    padding: 20px;
+	    text-align: center;
+	    text-transform: uppercase;
+        margin-left:2px;
+        width:264px;
+        margin-top:20px;
+        position:relative;
+}
+ #login-form fieldset {
+	background: #fff;
+	border-radius: 0 0 5px 5px;
+	padding: 20px;
+	position: relative;
+    border: #fff;
+}
+
+#login-form fieldset:before {
+	background-color: #fff;
+	content: "";
+	height: 8px;
+	left: 50%;
+	margin: -4px 0 0 -4px;
+	position: absolute;
+	top: 0;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+	width: 8px;
+}
+
+#login-form input {
+	font-size: 14px;
+}
+
+.email ,
+.password {
+	border: 1px solid #dcdcdc;
+	padding: 12px 10px;
+	width: 238px;
+}
+.email {
+	border-radius: 3px 3px 0 0;
+}
+
+.password {
+	border-top: none;
+	border-radius: 0px 0px 3px 3px;
+}
+
+.submit {
+	background: #1dabb8;
+	border-radius: 5px;
+	color: #fff;
+	float: right;
+	font-weight: bold;
+	margin-top: 20px;
+	padding: 12px 20px;
+    border: #1dabb8;
+}
+.submit{ 
+    cursor: pointer; 
+}
+.submit:hover { 
+    background: #198d98; 
+}
+.register{
+    margin-top:20px;
+    
+}
+</style>
+
+<div id="header-wrapper">
+    <header id="header" class="5grid-layout">
+        <div class="row">
+            <div class="12u">
+                <!-- Logo -->
+                <h1><a href="#" class="mobileUI-site-name">3D Madness</a></h1>
+                <p>Our 3d models are the best</p>
+                <!-- Nav -->
+                <nav class="mobileUI-site-nav">
+                    @Html.ActionLink("Homepage", "Index", "Home")
+                    <a href="threecolumn.html">Three Column</a>
+                    <a href="twocolumn1.html">Two Column #1</a>
+                    <a href="onecolumn.html">One Column</a>
+                    @Html.Partial("_LoginPartial")
+                </nav>
+            </div>
+        </div>
+    </header>
+</div>
+
+<div id="login-main">
+    <div id="login-form">
+        <h2>@ViewBag.Title</h2>       
+        <fieldset>
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div>
+                    @Html.LabelFor(m => m.Email, "Eлектронна пошта" , new { @class = "" })
+                    <div>
+                        @Html.TextBoxFor(m => m.Email, new { @class = "email" })
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div>
+                    @Html.LabelFor(m => m.Password, "Пароль", new { @class = "" })
+                    <div>
+                        @Html.PasswordFor(m => m.Password, new { @class = "password" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div>
+                            @Html.CheckBoxFor(m => m.RememberMe)
+                            @Html.LabelFor(m => m.RememberMe, "Запам'ятати мене")
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <a href="">
+                            <input type="submit" value="Увійти" class="submit" />
+                        </a>
+                    </div>
+                </div>
+                <p class="register">
+                    @Html.ActionLink("Реєстрація", "Register")
+                </p>
+            }
+            </fieldset>
+</div>
+</div>
+
+<div class="5grid-layout">
+    <div id="copyright">
+        <section>
+            <p>&copy; Your Site Name | Images: <a target="_blank" href="http://fotogrph.com/">Fotogrph</a> | Design: <a target="_blank" href="http://html5templates.com/">HTML5Templates.com</a></p>
+        </section>
+    </div>
+</div> 
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

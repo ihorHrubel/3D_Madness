@@ -1,0 +1,133 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div id="header-wrapper">
+    <header id="header" class="5grid-layout">
+        <div class="row">
+            <div class="12u">
+                <!-- Logo -->
+                <h1><a href="#" class="mobileUI-site-name">3D Madness</a></h1>
+                <p>Our 3d models are the best</p>
+                <!-- Nav -->
+                <nav class="mobileUI-site-nav">
+                    @Html.ActionLink("Homepage", "Index", "Home", new { @class = "active" })
+                    <a href="threecolumn.html">Three Column</a>
+                    <a href="twocolumn1.html">Two Column #1</a>
+                    <a href="onecolumn.html">One Column</a>
+                    @Html.Partial("_LoginPartial")
+                </nav>
+            </div>
+        </div>
+    </header>
+</div>
+<div id="wrapper">
+        <div class="5grid-layout">
+            <div class="row">
+                <div class="12u" id="banner">
+                    <section><a href="#"><img src="~/Images/pics01.jpg" alt=""></a></section>
+                </div>
+            </div>
+
+            <div id="feature-content">
+                <section>
+                    <h2>Gravida nibh quis urna</h2>
+                </section>
+                <div class="row">
+                    <div class="12u">
+                        <div class="row">
+                            <div class="3u">
+                                <section>
+                                    <div>
+                                        <div class="image-style1"><a href="#"><img src="~/Images/pics06.jpg" alt=""></a></div>
+                                        <div><a href="#"><img src="~/Images/img02.png" width="262" height="30" alt=""></a></div>
+                                    </div>
+                                    <p>Pellentesque viverra enim.Tristique ante ut risus. Quisque dictum. Integer nisl risus, sagittis convallis, rutrum id, elementum.</p>
+                                    <p class="button"><a href="#">Read Full Details</a></p>
+                                </section>
+                            </div>
+                            <div class="3u">
+                                <section>
+                                    <div>
+                                        <div class="image-style1"><a href="#"><img src="~/Images/pics07.jpg" alt=""></a></div>
+                                        <div><a href="#"><img src="~/Images/img02.png" width="262" height="30" alt=""></a></div>
+                                    </div>
+                                    <p>Pellentesque viverra enim.Tristique ante ut risus. Quisque dictum. Integer nisl risus, sagittis convallis, rutrum id, elementum.</p>
+                                    <p class="button"><a href="#">Read Full Details</a></p>
+                                </section>
+                            </div>
+                            <div class="3u">
+                                <section>
+                                    <div>
+                                        <div class="image-style1"><a href="#"><img src="~/Images/pics08.jpg" alt=""></a></div>
+                                        <div><a href="#"><img src="~/Images/img02.png" width="262" height="30" alt=""></a></div>
+                                    </div>
+                                    <p>Pellentesque viverra enim.Tristique ante ut risus. Quisque dictum. Integer nisl risus, sagittis convallis, rutrum id, elementum.</p>
+                                    <p class="button"><a href="#">Read Full Details</a></p>
+                                </section>
+                            </div>
+                            <div class="3u">
+                                <section>
+                                    <div>
+                                        <div class="image-style1"><a href="#"><img src="~/Images/pics09.jpg" alt=""></a></div>
+                                        <div><a href="#"><img src="~/Images/img02.png" width="262" height="30" alt=""></a></div>
+                                    </div>
+                                    <p>Pellentesque viverra enim.Tristique ante ut risus. Quisque dictum. Integer nisl risus, sagittis convallis, rutrum id, elementum.</p>
+                                    <p class="button"><a href="#">Read Full Details</a></p>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="row">
+                <div class="12u">
+                    <div class="row">
+                        <div id="splash"> <span>In posuere eleifend</span> odio quisque semper augue maecenas ligula congue rutrum. Pellentesque vulputaterisus semper. </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="12u" id="gallery">
+                    <div class="row">
+                        <div class="4u">
+                            <section>
+                                <div>
+                                    <div class="image-style1"><a href="#"><img src="~/Images/pics03.jpg" alt=""></a></div>
+                                    <div><a href="#"><img src="~/Images/img02.png" width="262" height="30" alt=""></a></div>
+                                    <p>Pellentesque viverra enim.Tristique ante ut risus. Quisque dictum. Integer nisl risus, sagittis convallis, rutrum id, elementum.</p>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="4u">
+                            <section>
+                                <div>
+                                    <div class="image-style1"><a href="#"><img src="~/Images/pics04.jpg" alt=""></a></div>
+                                    <div><a href="#"><img src="~/Images/img02.png" width="262" height="30" alt=""></a></div>
+                                    <p>Pellentesque viverra enim.Tristique ante ut risus. Quisque dictum. Integer nisl risus, sagittis convallis, rutrum id, elementum.</p>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="4u">
+                            <section>
+                                <div>
+                                    <div class="image-style1"><a href="#"><img src="~/Images/pics05.jpg" alt=""></a></div>
+                                    <div><a href="#"><img src="~/Images/img02.png" width="262" height="30" alt=""></a></div>
+                                    <p>Pellentesque viverra enim.Tristique ante ut risus. Quisque dictum. Integer nisl risus, sagittis convallis, rutrum id, elementum.</p>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="5grid-layout">
+    <div id="copyright">
+        <section>
+            <p>&copy; Your Site Name | Images: <a target="_blank" href="http://fotogrph.com/">Fotogrph</a> | Design: <a target="_blank" href="http://html5templates.com/">HTML5Templates.com</a></p>
+        </section>
+    </div>
+</div>
