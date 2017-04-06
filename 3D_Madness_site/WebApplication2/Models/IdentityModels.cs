@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
+using System.Collections.Generic;
 
 namespace WebApplication2.Models
 {
@@ -14,7 +15,7 @@ namespace WebApplication2.Models
         public string LastName { get; set; }
         public int Age { get; set; }
         public string City { get; set; }
-
+        
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Обратите внимание, что authenticationType должен совпадать с типом, определенным в CookieAuthenticationOptions.AuthenticationType
@@ -35,24 +36,31 @@ namespace WebApplication2.Models
         public string Version { get; set; }
         public string Color { get; set; }
         public string Style { get; set; }
+        public string Price { get; set; }
+    }
 
+    public class Busket
+    {
+        public int Id { get; set; }
+        public string ApplicationUserId { get; set; }
     }
 
     public class Purchase
     {
         public int Id { get; set; }
 
-        public int ApplicationUserId { get; set; }
-
         public int DModelId { get; set; }
+
+        public int ApplicationUserId { get; set; }
 
         public DateTime Date { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public DbSet<Purchase> Purchases { get; set; }
+
         public DbSet<DModel> DModels { get; set; }
+
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

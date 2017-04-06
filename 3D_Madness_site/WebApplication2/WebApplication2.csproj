@@ -196,6 +196,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BusketController.cs" />
+    <Compile Include="Controllers\DModelsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -205,13 +207,9 @@
     <Compile Include="Migrations\201704012014532_InitialCreate.Designer.cs">
       <DependentUpon>201704012014532_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201704031121095_DataMigration1.cs" />
-    <Compile Include="Migrations\201704031121095_DataMigration1.Designer.cs">
-      <DependentUpon>201704031121095_DataMigration1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704031658225_DataMigration.cs" />
-    <Compile Include="Migrations\201704031658225_DataMigration.Designer.cs">
-      <DependentUpon>201704031658225_DataMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201704060613370_Data-Migration.cs" />
+    <Compile Include="Migrations\201704060613370_Data-Migration.Designer.cs">
+      <DependentUpon>201704060613370_Data-Migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -223,6 +221,8 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.minn.css" />
+    <Content Include="Content\custom.css" />
     <Content Include="Content\style-desktop.css" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
@@ -297,6 +297,13 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\DModels\Create.cshtml" />
+    <Content Include="Views\DModels\Delete.cshtml" />
+    <Content Include="Views\DModels\Details.cshtml" />
+    <Content Include="Views\DModels\Edit.cshtml" />
+    <Content Include="Views\DModels\Index.cshtml" />
+    <Content Include="Views\Shared\_AddToBusket.cshtml" />
+    <Content Include="Views\Busket\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -313,11 +320,8 @@
     <EmbeddedResource Include="Migrations\201704012014532_InitialCreate.resx">
       <DependentUpon>201704012014532_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704031121095_DataMigration1.resx">
-      <DependentUpon>201704031121095_DataMigration1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704031658225_DataMigration.resx">
-      <DependentUpon>201704031658225_DataMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704060613370_Data-Migration.resx">
+      <DependentUpon>201704060613370_Data-Migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

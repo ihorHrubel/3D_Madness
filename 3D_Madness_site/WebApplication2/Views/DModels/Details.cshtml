@@ -1,0 +1,175 @@
+﻿@model WebApplication2.Models.DModel
+
+@{
+    ViewBag.Title = "Details";
+}
+<style>
+    #detail-form{
+        background-color:#f2f2f2;
+        height:510px;
+        border:1px solid;
+        padding-left:300px;
+        padding-right:340px;
+    }
+    
+    #title {
+        margin-top:30px;
+        float:left;
+        text-align:center;
+        
+    }
+    #property{
+        margin-top:130px;
+        float:right;
+        width:300px;
+        height:300px;
+    }
+    table{
+        padding-bottom:30px;
+    }
+    td{
+        padding-left:15px;
+    }
+    #title h1{
+        text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,               
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25);
+        font-size:50px;
+        margin-bottom:10px;
+    }
+    #tobusket {
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+      padding: .8em 1em calc(.8em + 3px);
+      border-radius: 3px;
+      background: rgb(64,199,129);
+      box-shadow: 0 -3px rgb(53,167,110) inset;
+      transition: 0.2s;
+      margin-left:30px;
+    } 
+    #tobusket:hover { background: rgb(53, 167, 110); 
+
+    }
+    #tobusket:active {
+      background: rgb(33,147,90);
+      box-shadow: 0 3px rgb(33,147,90) inset;
+    }
+    #tobuy {
+          margin-left:20px;
+          height:30px;
+          width:75px;
+          text-align:center;
+          display: inline-block;
+          color: black;
+          font-size: 125%;
+          font-weight: 700;
+          text-decoration: none;
+          user-select: none;
+          padding: .25em .5em;
+          outline: none;
+          border: 1px solid rgb(250,172,17);
+          border-radius: 7px;
+          background: rgb(255,212,3) linear-gradient(rgb(255,212,3), rgb(248,157,23));
+          box-shadow: inset 0 -2px 1px rgba(0,0,0,0), inset 0 1px 2px rgba(0,0,0,0), inset 0 0 0 60px rgba(255,255,0,0);
+          transition: box-shadow .2s, border-color .2s;
+        } 
+    #tobuy{
+          box-shadow: inset 0 -1px 1px rgba(0,0,0,0), inset 0 1px 2px rgba(0,0,0,0), inset 0 0 0 60px rgba(255,255,0,.5);
+        }
+    #tobuy{
+          padding: calc(.25em + 1px) .5em calc(.25em - 1px);
+          border-color: rgba(177,159,0,1);
+          box-shadow: inset 0 -1px 1px rgba(0,0,0,.1), inset 0 1px 2px rgba(0,0,0,.3), inset 0 0 0 60px rgba(255,255,0,.45);
+}
+
+
+</style>
+
+
+<div id="header-wrapper">
+    <header id="header" class="5grid-layout">
+        <div class="row">
+            <div class="12u">
+                <!-- Logo -->
+                <h1><a href="#" class="mobileUI-site-name">3D Madness</a></h1>
+                <p>Our 3d models are the best</p>
+                <!-- Nav -->
+                <nav class="mobileUI-site-nav">
+                    @Html.ActionLink("Homepage", "Index", "Home", new { @class = "active" })
+                    <a href="threecolumn.html">Three Column</a>
+                    <a href="twocolumn1.html">Two Column #1</a>
+                    <a href="onecolumn.html">One Column</a>
+                    @Html.Partial("_LoginPartial")
+                </nav>
+            </div>
+        </div>
+    </header>
+</div>
+
+<div id="detail-form">
+
+        <div id="title">
+            <h1>@Model.Name</h1>
+            <img src= @Model.Url style="width:340px; height:340px">          
+        </div>
+            
+         <div id="property">
+             <table>
+                 <tr>
+
+                     <td><h2>@Html.DisplayNameFor(model => model.Version)</h2></td>
+                     <td>@Html.DisplayFor(model => model.Version)</td>
+
+                 </tr>
+                 
+                 <tr>
+
+                     <td><h2>@Html.DisplayNameFor(model => model.Weight)</h2></td>
+                     <td>@Html.DisplayFor(model => model.Weight)</td>
+
+                 </tr>
+                 <tr>
+
+                     <td><h2>@Html.DisplayNameFor(model => model.Color)</h2></td>
+                     <td>@Html.DisplayFor(model => model.Color)</td>
+
+                 </tr>
+                 <tr>
+
+                     <td><h2>@Html.DisplayNameFor(model => model.Style)</h2></td>
+                     <td>@Html.DisplayFor(model => model.Style)</td>
+
+                 </tr>
+                 <tr>
+                     <td><h2>@Html.DisplayNameFor(model => model.Description)</h2></td>
+                     <td>@Html.DisplayFor(model => model.Description)</td>
+                     
+                 </tr>
+             </table>
+             @Html.Partial("_AddToBusket", Model)        
+         </div>      
+                      
+</div>
+   
+
+
+<div class="5grid-layout">
+    <div id="copyright">
+        <section>
+            <p>&copy; Your Site Name | Images: <a target="_blank" href="http://fotogrph.com/">Fotogrph</a> | Design: <a target="_blank" href="http://html5templates.com/">HTML5Templates.com</a></p>
+        </section>
+    </div>
+</div>
+
+<script>
+    tobusket.onclick = function () {
+        alert("Товар добавлено у корзину");
+    };
+</script>
+

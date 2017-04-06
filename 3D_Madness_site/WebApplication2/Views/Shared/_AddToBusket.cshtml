@@ -1,0 +1,12 @@
+﻿@using Microsoft.AspNet.Identity
+@model WebApplication2.Models.DModel
+
+@if (Request.IsAuthenticated)
+{
+    <a href="#" id="tobusket">В корзину</a>    
+    <a href="/Busket/Create" id="tobuy">Купити</a>
+}
+else
+{
+
+}

@@ -22,6 +22,7 @@
         </div>
     </header>
 </div>
+
 <div id="wrapper">
         <div class="5grid-layout">
             <div class="row">
@@ -45,8 +46,8 @@
                                             <div class="image-style1"><a href="#"><img src=@m.Url alt=""></a></div>
                                             <div><a href="#"><img src="~/Images/img02.png" width="262" height="30" alt=""></a></div>
                                         </div>
-                                        <p style="margin-top:-5px; font-size:20px; position:relative">@m.Name. @m.Style. @m.Color. @m.Description.</p>
-                                        <p class="button"><a href="#">Детальніше</a></p>
+                                        <p style="margin-top:-5px; font-size:20px; position:relative">@m.Name</p>
+                                        <p class="button">@Html.ActionLink("Детальніше", "Details", "DModels", new { @id = @m.Id }, null)</p>
                                     </section>
                                 </div>
                             }
