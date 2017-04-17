@@ -1,15 +1,8 @@
 ﻿@using Microsoft.AspNet.Identity
 @if (Request.IsAuthenticated)
 {
-    <a href="threecolumn.html">Профіль</a>
+    @Html.ActionLink("Профіль", "GetProfile", "Account")
     @Html.ActionLink("Корзина", "Index", "DModels")
-
-    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
-    {
-        @Html.AntiForgeryToken()
-        <a href="javascript:document.getElementById('logoutForm').submit()">Вихід</a>
-       
-    }
 }
 else
 {

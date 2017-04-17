@@ -51,7 +51,10 @@ namespace WebApplication2.Controllers
                 _userManager = value;
             }
         }
-
+        public ActionResult GetProfile()
+        {
+            return View();
+        }
         //
         // GET: /Account/Login
         [AllowAnonymous]

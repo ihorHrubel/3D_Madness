@@ -293,6 +293,7 @@
     <Content Include="Views\DModels\Edit.cshtml" />
     <Content Include="Views\DModels\Index.cshtml" />
     <Content Include="Views\Shared\_AddToBusket.cshtml" />
+    <Content Include="Views\Account\GetProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

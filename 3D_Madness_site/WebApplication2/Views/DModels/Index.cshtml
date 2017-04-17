@@ -8,12 +8,24 @@
         background-color:#f2f2f2;
         height:510px;
         border:1px solid;  
-        padding-left:250px;
+        padding-left:200px;
         padding-top:50px;    
     }
      .table th , td{ 
          width:150px;
          text-align :center;
+    }
+     #buy-form{
+         float:right;
+         position:absolute;
+         margin-top:-510px;
+         margin-left:870px;
+     }
+     #buy-form span{
+         font-size:30px;
+         color: hsl(80, 70%, 55%);
+         text-shadow: -1px -1px 0 hsl(80, 70%, 35%),
+             -2px -2px 1px hsl(80, 70%, 35%);
      }
 </style>
 
@@ -40,8 +52,7 @@
 <div id="busket-form">
     <table class="table">
         <tr>
-            <th>
-                
+            <th>              
             </th>
             <th>
                 <p>Назва</p>
@@ -51,9 +62,14 @@
             </th>
             <th></th>
         </tr>
-
+        @{ 
+            var counter = 0;
+        }
+        
         @foreach (var item in Model)
         {
+            var price = Convert.ToInt32(item.Price.Split('$').First());
+            counter += price;
             <tr>
                 <td>
                     <img src=@item.Url style="height:120px; width:120px;">
@@ -72,15 +88,20 @@
         }
 
     </table>
-
-
 </div>
-
+<div id="buy-form">
+    <span>
+        Загальна сума:
+    </span>
+    <span>
+        @counter$
+    </span>
+</div>
 
 <div class="5grid-layout">
     <div id="copyright">
         <section>
-            <p>&copy; Your Site Name | Images: <a target="_blank" href="http://fotogrph.com/">Fotogrph</a> | Design: <a target="_blank" href="http://html5templates.com/">HTML5Templates.com</a></p>
+            <p>&copy; Your Site Name | Images: <a target="_blank" href="http://fotograph.com/">Fotogrph</a> | Design: <a target="_blank" href="http://html5templates.com/">HTML5Templates.com</a></p>
         </section>
     </div>
 </div>

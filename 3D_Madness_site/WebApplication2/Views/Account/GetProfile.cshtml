@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "GetProfile";
+}
+
+<style>
+    #main-form {
+        background-color: #f2f2f2;
+        height: 510px;
+        border: 1px solid;
+        padding-left: 250px;
+        padding-top: 50px;
+    }
+</style>
+
+<div id="header-wrapper">
+    <header id="header" class="5grid-layout">
+        <div class="row">
+            <div class="12u">
+                <!-- Logo -->
+                <h1><a href="#" class="mobileUI-site-name">3D Madness</a></h1>
+                <p>Our 3d models are the best</p>
+                <!-- Nav -->
+                <nav class="mobileUI-site-nav">
+                    @Html.ActionLink("Головна", "Index", "Home")
+                    <a href="threecolumn.html">Three Column</a>
+                    <a href="twocolumn1.html">Two Column #1</a>
+                    <a href="onecolumn.html">One Column</a>
+                    @Html.Partial("_LoginPartial")
+                </nav>
+            </div>
+        </div>
+    </header>
+</div>
+
+<div id="main-form">
+    @if (Request.IsAuthenticated)
+    {
+        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+        {
+            @Html.AntiForgeryToken()
+            <a href="javascript:document.getElementById('logoutForm').submit()">Вихід</a>
+        }
+     }
+</div>
+
+
+<div class="5grid-layout">
+    <div id="copyright">
+        <section>
+            <p>&copy; Your Site Name | Images: <a target="_blank" href="http://fotogrph.com/">Fotograph</a> | Design: <a target="_blank" href="http://html5templates.com/">HTML5Templates.com</a></p>
+        </section>
+    </div>
+</div>
+

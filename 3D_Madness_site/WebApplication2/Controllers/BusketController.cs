@@ -13,11 +13,6 @@ namespace WebApplication2.Controllers
     public class BusketController : Controller
     {
         ApplicationDbContext db = new ApplicationDbContext();
-        // GET: Busket
-        public ActionResult Index()
-        {
-            return View();
-        }
 
         public ActionResult AddToBusket(int? Id)
         {
@@ -28,6 +23,7 @@ namespace WebApplication2.Controllers
             db.SaveChanges();
             return RedirectToAction("Details", "DModels", new { Id = Id });
         }
+
         public ActionResult DeleteFromBusket(int? Id)
         {
             var model = db.DModels.Where(m => m.Id == Id).First();
@@ -37,6 +33,7 @@ namespace WebApplication2.Controllers
             db.SaveChanges();
             return RedirectToAction("Index", "DModels", new { Id = Id });
         }
+
         public bool IsAdded(string busketId , int modelId)
         {
             var busket = db.Buskets.Include(b => b.Models).Where(b => b.Id == busketId).First();
