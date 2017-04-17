@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Details";
 }
+
 <style>
     #detail-form{
         background-color:#f2f2f2;
@@ -19,7 +20,7 @@
         
     }
     #property{
-        margin-top:130px;
+        margin-top:110px;
         float:right;
         width:300px;
         height:300px;
@@ -86,8 +87,24 @@
           padding: calc(.25em + 1px) .5em calc(.25em - 1px);
           border-color: rgba(177,159,0,1);
           box-shadow: inset 0 -1px 1px rgba(0,0,0,.1), inset 0 1px 2px rgba(0,0,0,.3), inset 0 0 0 60px rgba(255,255,0,.45);
-}
-
+    }
+    #tobuy:hover {
+          background: rgb(218 ,165 ,32);
+    }
+    #alreadyAdded {
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+      padding: .8em 1em calc(.8em + 3px);
+      border-radius: 3px;
+      background: rgb(205, 201, 201);      
+      transition: 0.2s;
+      margin-left:30px;
+    } 
+    .price{
+         color:forestgreen;
+         font-size:20px;
+    }
 
 </style>
 
@@ -101,7 +118,7 @@
                 <p>Our 3d models are the best</p>
                 <!-- Nav -->
                 <nav class="mobileUI-site-nav">
-                    @Html.ActionLink("Homepage", "Index", "Home", new { @class = "active" })
+                    @Html.ActionLink("Головна", "Index", "Home")
                     <a href="threecolumn.html">Three Column</a>
                     <a href="twocolumn1.html">Two Column #1</a>
                     <a href="onecolumn.html">One Column</a>
@@ -122,34 +139,28 @@
          <div id="property">
              <table>
                  <tr>
-
                      <td><h2>@Html.DisplayNameFor(model => model.Version)</h2></td>
                      <td>@Html.DisplayFor(model => model.Version)</td>
-
-                 </tr>
-                 
+                 </tr>                 
                  <tr>
-
                      <td><h2>@Html.DisplayNameFor(model => model.Weight)</h2></td>
                      <td>@Html.DisplayFor(model => model.Weight)</td>
-
                  </tr>
                  <tr>
-
                      <td><h2>@Html.DisplayNameFor(model => model.Color)</h2></td>
                      <td>@Html.DisplayFor(model => model.Color)</td>
-
                  </tr>
                  <tr>
-
                      <td><h2>@Html.DisplayNameFor(model => model.Style)</h2></td>
                      <td>@Html.DisplayFor(model => model.Style)</td>
-
                  </tr>
                  <tr>
                      <td><h2>@Html.DisplayNameFor(model => model.Description)</h2></td>
-                     <td>@Html.DisplayFor(model => model.Description)</td>
-                     
+                     <td>@Html.DisplayFor(model => model.Description)</td>                     
+                 </tr>
+                 <tr>
+                     <td><h2>@Html.DisplayNameFor(model => model.Price)</h2></td>
+                     <td class="price">@Html.DisplayFor(model => model.Price)</td>
                  </tr>
              </table>
              @Html.Partial("_AddToBusket", Model)        
@@ -157,8 +168,6 @@
                       
 </div>
    
-
-
 <div class="5grid-layout">
     <div id="copyright">
         <section>
@@ -167,9 +176,4 @@
     </div>
 </div>
 
-<script>
-    tobusket.onclick = function () {
-        alert("Товар добавлено у корзину");
-    };
-</script>
 

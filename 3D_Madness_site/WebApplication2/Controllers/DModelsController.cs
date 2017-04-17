@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -17,7 +18,9 @@ namespace WebApplication2.Controllers
         // GET: DModels
         public ActionResult Index()
         {
-            return View(db.DModels.ToList());
+            var id = User.Identity.GetUserId();
+            var busket = db.Buskets.Include(b => b.Models).Where(b => b.Id == id).First();
+            return View(busket.Models.ToList());
         }
 
         // GET: DModels/Details/5
@@ -34,8 +37,6 @@ namespace WebApplication2.Controllers
             }
             return View(dModel);
         }
-
-       
 
 
         // GET: DModels/Create
@@ -95,16 +96,7 @@ namespace WebApplication2.Controllers
         // GET: DModels/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            DModel dModel = db.DModels.Find(id);
-            if (dModel == null)
-            {
-                return HttpNotFound();
-            }
-            return View(dModel);
+            return RedirectToAction("DeleteFromBusket", "Busket", new { Id = id });
         }
 
         // POST: DModels/Delete/5

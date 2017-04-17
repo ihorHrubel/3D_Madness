@@ -201,8 +201,5 @@ D:\3D_Madness\3D_Madness_site\WebApplication2\bin\ru\Microsoft.Owin.Security.Goo
 D:\3D_Madness\3D_Madness_site\WebApplication2\bin\ru\Microsoft.Owin.Security.Twitter.resources.dll
 D:\3D_Madness\3D_Madness_site\WebApplication2\bin\ru\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
 D:\3D_Madness\3D_Madness_site\WebApplication2\obj\Debug\WebApplication2.csprojResolveAssemblyReference.cache
-D:\3D_Madness\3D_Madness_site\WebApplication2\obj\Debug\WebApplication2.Migrations.InitialCreate.resources
-D:\3D_Madness\3D_Madness_site\WebApplication2\obj\Debug\WebApplication2.csproj.GenerateResource.Cache
 D:\3D_Madness\3D_Madness_site\WebApplication2\obj\Debug\WebApplication2.dll
 D:\3D_Madness\3D_Madness_site\WebApplication2\obj\Debug\WebApplication2.pdb
-D:\3D_Madness\3D_Madness_site\WebApplication2\obj\Debug\WebApplication2.Migrations.DataMigration.resources

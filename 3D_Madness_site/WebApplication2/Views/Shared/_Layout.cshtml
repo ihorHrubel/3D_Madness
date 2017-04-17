@@ -9,8 +9,8 @@
 
     <link href="@Url.Content("~/Content/style-desktop.css")" rel="stylesheet" type="text/css" />
     @RenderSection("Styles", false)
-   
-    
+  
+
 
     <script src="~/Scripts/init.js"></script>
     <script src="~/Scripts/jquery.js"></script>
@@ -20,12 +20,7 @@
 </head>
 
 <body>
-
-    
-
-    @RenderBody();
-
-    
+    @RenderBody();   
     @RenderSection("scripts", required: false)
 </body>
 </html>

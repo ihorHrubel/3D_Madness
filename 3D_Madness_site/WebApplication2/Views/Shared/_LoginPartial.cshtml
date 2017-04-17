@@ -2,7 +2,8 @@
 @if (Request.IsAuthenticated)
 {
     <a href="threecolumn.html">Профіль</a>
-    <a href="threecolumn.html">Корзина</a>
+    @Html.ActionLink("Корзина", "Index", "DModels")
+
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
         @Html.AntiForgeryToken()
