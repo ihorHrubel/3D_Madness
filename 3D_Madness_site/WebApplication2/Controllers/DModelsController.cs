@@ -78,8 +78,6 @@ namespace WebApplication2.Controllers
         }
 
         // POST: DModels/Edit/5
-        // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
-        // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Url,Name,Description,Weight,Version,Color,Style")] DModel dModel)
